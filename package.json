@@ -1,0 +1,19 @@
+{
+  "name": "online",
+  "version": "1.0.0",
+  "description": "Small library that graphically displays the status of your Internet connection (wifi or 4G)",
+  "main": "./index.html",
+  "scripts": {
+    "start": "http-server -p 7070"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rldona/online.js.git"
+  },
+  "author": "Raúl López Doña",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rldona/online/issues"
+  },
+  "homepage": "https://frontdev.io/lab/online/"
+}
