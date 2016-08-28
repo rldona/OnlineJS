@@ -4,52 +4,80 @@ var Online = (function() {
   'use strict';
 
   // Private
-
   var options = {
-    status: null
+    alertActive: false,
+    status: navigator.onLine ? true : false
   };
 
-  var alert = document.querySelector('.alert');
+  function create() {
+    var alertDOM = document.createElement('div');
 
-  function activeAlert(status) {
-    if (!status) {
+    alertDOM.classList.add('online-component');
+    alertDOM.innerHTML = '<p>Connection lost. Reconnecting...</p><i class="loader"></i>';
+
+    document.body.insertBefore(
+      alertDOM,
+      document.body.childNodes[0]
+    );
+  }
+
+  function remove() {
+    var body = document.querySelector('body');
+    var alert = document.querySelector('.online-component');
+
+    body.removeChild(alert);
+  }
+
+  function activate() {
+    var alert = document.querySelector('.online-component');
+
+    if (!options.status) {
+      create();
+      alert = document.querySelector('.online-component');
       alert.classList.add('visible');
-    } else {
-      alert.classList.remove('visible');
+      options.alertActive = true;
+    }
+
+    if (options.alertActive && options.status) {
+      // reconnect
+      alert.classList.add('reconnect');
+      alert.innerHTML = '<p class="connected">Your device is connected to the internet</p>';
+
+      setTimeout(function() {
+        alert.classList.remove('visible');
+        options.alertActive = false;
+      }, 2000);
+
+      setTimeout(function() {
+        alert.classList.remove('reconnect');
+        remove();
+      }, 2100);
     }
   }
 
   function updateStatus() {
-    activeAlert(navigator.onLine ? true : false);
+    options.status = navigator.onLine ? true : false;
+
+    activate();
   }
 
-  function init() {
-
-    // TODO: añadir en el DOM la alerta de conexión
-
-    // init status
-    activeAlert(navigator.onLine ? true : false);
-
+  var init = (function init() {
     // network listeners
     window.addEventListener('online',  updateStatus);
     window.addEventListener('offline', updateStatus);
-  }
 
-  init();
+    // init alert
+    activate(options.status);
+  })();
 
   // Public
 
+  function getStatus() {
+    return options.status;
+  }
+
   return {
-    // init : init
+    getStatus: getStatus
   };
-
-})();
-
-(function() {
-
-  'use strict';
-
-  // init Online.js
-  // Online.init();
 
 })();
