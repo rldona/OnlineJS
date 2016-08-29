@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rldona/online/issues"
   },
-  "homepage": "https://frontdev.io/lab/online/"
+  "homepage": "https://frontdev.io/lab/online/",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
