@@ -7,7 +7,7 @@
   background: #ff6055;
   color: #ffffff;
   opacity: 0;
-  transition: opacity 0.2s linear;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .online-component p,
