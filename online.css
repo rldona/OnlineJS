@@ -1,6 +1,5 @@
 .online-component {
   position: fixed;
-  top: 0;
   left: 0;
   right: 0;
   margin: auto;
@@ -11,14 +10,6 @@
   transition: opacity 0.2s linear;
 }
 
-.online-component.visible {
-  opacity: 1;
-}
-
-.online-component.reconnect {
-  background: #4CAF50!important;
-}
-
 .online-component p,
 .online-component p.connected {
   text-align: center;
@@ -27,13 +18,35 @@
   font: normal 400 1rem "arial";
 }
 
+.online-component.visible {
+  opacity: 1;
+}
+
+.online-component.reconnect {
+  background: #4CAF50!important;
+}
+
+.online-component.top {
+  bottom: 0;
+  top: inherit;
+}
+
+.online-component.bottom {
+  bottom: 0;
+}
+
 @media (min-width: 768px) {
   .online-component {
     top: 2rem;
     bottom: inherit;
-    width: 350px;
+    width: 450px;
     border-radius: 3px;
     box-shadow: 0 1px 5px rgba(0,0,0, 0.2);
+  }
+
+  .online-component.top {
+    bottom: inherit;
+    top: 2rem;
   }
 }
 

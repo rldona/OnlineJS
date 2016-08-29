@@ -5,20 +5,20 @@ var Online = (function() {
 
   // Private
   var options = {
-    alertActive: false,
-    status: navigator.onLine ? true : false
+    activate: false,
+    status: navigator.onLine ? true : false,
+    position: 'top'
   };
 
   function create() {
     var alertDOM = document.createElement('div');
 
     alertDOM.classList.add('online-component');
+    alertDOM.classList.add(options.position);
+
     alertDOM.innerHTML = '<p>Connection lost. Reconnecting...</p><i class="loader"></i>';
 
-    document.body.insertBefore(
-      alertDOM,
-      document.body.childNodes[0]
-    );
+    document.body.insertBefore(alertDOM,document.body.childNodes[0]);
   }
 
   function remove() {
@@ -35,23 +35,23 @@ var Online = (function() {
       create();
       alert = document.querySelector('.online-component');
       alert.classList.add('visible');
-      options.alertActive = true;
+      options.activate = true;
     }
 
-    if (options.alertActive && options.status) {
+    if (options.activate && options.status) {
       // reconnect
       alert.classList.add('reconnect');
       alert.innerHTML = '<p class="connected">Your device is connected to the internet</p>';
 
       setTimeout(function() {
         alert.classList.remove('visible');
-        options.alertActive = false;
-      }, 2000);
+        options.activate = false;
+      }, 3000);
 
       setTimeout(function() {
         alert.classList.remove('reconnect');
         remove();
-      }, 2100);
+      }, 3100);
     }
   }
 
