@@ -2,7 +2,6 @@
   "name": "online",
   "version": "1.0.0",
   "description": "Small library that graphically displays the status of your Internet connection (wifi or 4G)",
-  "main": "./index.html",
   "scripts": {
     "start": "firebase serve",
     "deploy": "firebase deploy"

@@ -18,7 +18,7 @@ var Online = (function() {
     alertDOM.classList.add(options.position);
     backdrop.classList.add('backdrop');
 
-    alertDOM.innerHTML = '<p>Connection lost. Reconnecting...</p><i class="loader"></i>';
+    alertDOM.innerHTML = "<p>You're <b>offline</b>. Connect to the internet.</p><i class='loader'></i>";
 
     document.body.insertBefore(alertDOM,document.body.childNodes[0]);
     document.body.insertBefore(backdrop,document.body.childNodes[0]);
@@ -55,19 +55,19 @@ var Online = (function() {
 
       // reconnect
       alert.classList.add('reconnect');
-      alert.innerHTML = '<p class="connected">Your device is connected to the internet</p>';
+      alert.innerHTML = "<p class='connected'>You're <strong>online</strong>. You come to have internet.</p>";
 
       setTimeout(function() {
         backdrop.classList.remove('visible');
         alert.classList.remove('visible');
 
         options.activate = false;
-      }, 1500);
+      }, 2500);
 
       setTimeout(function() {
         alert.classList.remove('reconnect');
         remove();
-      }, 1600);
+      }, 2600);
     }
   }
 
