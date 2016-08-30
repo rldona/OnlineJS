@@ -1,12 +1,12 @@
 # NPM
 
 node_modules
+npm-debug.log
 
 # Firebase
 
-./demo/.firebaserc
-./demo/js/firebase-config.js
-database.rules.json
+demo/.firebaserc
+demo/js/firebase-config.js
 firebase.json
 firebase-debug.log
 

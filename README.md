@@ -9,9 +9,19 @@ Visit [https://onlinejs-library.firebaseapp.com/](https://onlinejs-library.fireb
 
 ![alt text](./demo/img/preview.jpg "Preview")
 
+## Local Server
+
+The demo can be launched locally with npm:
+
+```Terminal
+npm start
+```
+
 ## Setup
 
-**OnlineJS has no dependencies.** It can be added to any web/mobile/pwa app by including two files:
+**OnlineJS has no dependencies.**
+
+It can be added to any web/mobile/pwa app by including two files:
 
 ```HTML
 <!-- OnlineJS -->

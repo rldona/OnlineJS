@@ -4,7 +4,8 @@
   "description": "Small library that graphically displays the status of your Internet connection (wifi or 4G)",
   "main": "./index.html",
   "scripts": {
-    "start": "http-server -p 7070"
+    "start": "firebase serve",
+    "deploy": "firebase deploy"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/rldona/online/issues"
   },
-  "homepage": "https://frontdev.io/lab/online/"
+  "homepage": "https://frontdev.io/lab/online/",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
