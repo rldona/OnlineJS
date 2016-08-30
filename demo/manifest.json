@@ -1,11 +1,11 @@
 {
   "name": "OnlineJS",
   "short_name": "OnlineJS",
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "display": "fullscreen",
   "orientation": "portrait",
   "icons": [{
-    "src": "./logo.png",
+    "src": "./img/logo.png",
     "sizes": "300x300",
     "type": "image/png"
   }],
