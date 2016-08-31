@@ -58,8 +58,8 @@ var Online = (function() {
       alert.innerHTML = "<p class='connected'>You're <strong>online</strong>. You come to have internet.</p>";
 
       setTimeout(function() {
-        backdrop.classList.remove('visible');
         alert.classList.remove('visible');
+        backdrop.classList.remove('visible');
 
         options.activate = false;
       }, 2500);
